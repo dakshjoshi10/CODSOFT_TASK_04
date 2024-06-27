@@ -1,32 +1,40 @@
 # CODSOFT_TASK_04
 Here's a simple implementation of the Rock, Paper, Scissors game in Python. It will prompt the user to choose rock, paper, or scissors, generate a random choice for the computer, determine the winner, display the result, and optionally keep track of the score. We'll also include a play-again feature.
-Explanation:
-get_computer_choice(): Generates a random choice for the computer.
-determine_winner(): Determines the winner based on the user's choice and the computer's choice.
-display_result(): Displays the user's choice, the computer's choice, and the result.
-play_again(): Asks the user if they want to play another round and returns a boolean.
-play_game(): The main game loop that handles user input, calls the necessary functions, keeps track of the score, and checks if the user wants to play again.
-This script should be run in a Python environment. It provides clear instructions and feedback to the user, making it easy to follow and play the game.
- here's a brief theoretical explanation of the code:
+Overview
+The code implements a command-line Rock, Paper, Scissors game in Python. The game allows a user to play multiple rounds against the computer, tracks the scores, and provides an option to play again after each round.
 
-Function Definitions:
+Detailed Explanation
+Importing the Random Module:
+The random module is imported to enable the computer to make a random choice between rock, paper, and scissors.
+Defining Functions:
 
-get_computer_choice(): This function generates a random choice from 'rock', 'paper', or 'scissors' for the computer using Python's random module.
-determine_winner(user_choice, computer_choice): This function compares the user's choice with the computer's choice to determine the winner. It checks for ties first, then uses the rules of the game (rock beats scissors, scissors beat paper, paper beats rock) to decide the winner.
-display_result(user_choice, computer_choice, winner): This function displays the choices made by the user and the computer, and announces the result (win, lose, or tie).
-play_again(): This function prompts the user to decide if they want to play another round. It ensures valid input ('yes' or 'no') and returns a boolean indicating the user's choice.
-Main Game Loop (play_game):
+get_computer_choice():
+This function defines a list of choices (rock, paper, scissors).
+It returns a randomly selected choice from the list using random.choice().
+determine_winner(user_choice, computer_choice):
+This function takes the user's and computer's choices as input.
+It first checks if the choices are the same, resulting in a tie.
+Then it checks for all possible winning conditions for the user.
+If none of the above conditions are met, the computer wins.
+display_result(user_choice, computer_choice, winner):
+This function takes the user's choice, the computer's choice, and the winner as input.
+It prints out the choices made by the user and the computer.
+It then prints out the result based on the winner.
+play_again():
+This function prompts the user to decide if they want to play another round.
+It ensures the input is either 'yes' or 'no'.
+It returns True if the user wants to play again, and False otherwise.
+Main Game Loop:
 
-user_score and computer_score are initialized to keep track of the scores.
-The game runs in a while loop:
-The user is prompted to choose 'rock', 'paper', or 'scissors'. If the input is invalid, the loop continues, asking for a valid input.
-The computer's choice is generated.
-The winner is determined using determine_winner.
-The result is displayed using display_result.
-Scores are updated based on the result.
-The current scores are printed.
-The user is asked if they want to play again. If they say no, the loop breaks, and a thank you message is displayed.
-Script Execution:
-
-The play_game() function is called to start the game when the script is executed.
-This structure ensures that the game is interactive, user-friendly, and keeps track of scores, providing a complete Rock, Paper, Scissors game experience in the console.
+play_game():
+Initializes the scores for the user and the computer.
+Enters a while loop to keep the game running for multiple rounds.
+Prompts the user to choose rock, paper, or scissors. If the input is invalid, it prompts again.
+Generates the computer's choice using get_computer_choice().
+Determines the winner using determine_winner().
+Displays the result using display_result().
+Updates the scores based on the winner.
+Prints the current scores.
+Asks if the user wants to play again using play_again(). If the user says no, it breaks the loop and ends the game.
+Summary
+The code provides a fully interactive Rock, Paper, Scissors game that runs in the console. It handles user input, generates random choices for the computer, determines the winner, tracks scores, and allows the user to play multiple rounds. The functions are modular and handle specific tasks, making the code organized and easy to understand.
